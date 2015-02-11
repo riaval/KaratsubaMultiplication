@@ -10,7 +10,7 @@ object Karatsuba {
   * acT^2 + ((a + b)(c + d) - ac - bd)T + bd
   * */
   def multiplication(first: BigInt, second: BigInt): BigInt =
-    if (first.bitLength > MIN_LENGTH || second.bitLength > MIN_LENGTH) first * second
+    if (first.toString().length < MIN_LENGTH || second.toString().length < MIN_LENGTH) first * second
     else {
       val (a, b) = split(first)
       val (c, d) = split(second)
